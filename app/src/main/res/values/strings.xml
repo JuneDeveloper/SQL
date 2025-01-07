@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SQL</string>
+    <string name="begin">Начать работу</string>
+    <string name="dataBase">База данных</string>
+    <string name="exit">Выход</string>
+    <string name="inputName">Введите имя</string>
+    <string name="inputPhoneNumber">Введите телефон</string>
+    <string name="save">Сохранить данные</string>
+    <string name="get">Получить данные</string>
+    <string name="delete">Удалить данные</string>
+    <string name="name">Имя</string>
+    <string name="phone">Телефон</string>
+    <string name="role">Должность</string>
+    <string name="format">\n\n</string>
+</resources>
