@@ -12,16 +12,16 @@ class DBHelper(context: Context,factory:SQLiteDatabase.CursorFactory?):
             private val DATABASE_NAME = "PERSON_DATABASE"
             private val DATABASE_VERSION = 1
             val TABLE_NAME = "person_table"
-            val KEY_ID = "id"
-            val KEY_NAME = "name"
-            val KEY_INFO = "phone"
+            val KEY_ID = "name"
+            val KEY_PHONE = "phone"
+            val KEY_ROLE = "role"
         }
 
     override fun onCreate(db: SQLiteDatabase) {
         val query = ("CREATE TABLE " + TABLE_NAME + " (" +
-                KEY_ID + " INTEGER PRIMARY KEY, " +
-                KEY_NAME + " TEXT," +
-                KEY_INFO + " TEXT" + ")")
+                KEY_ID + " TEXT, " +
+                KEY_PHONE + " TEXT," +
+                KEY_ROLE + " TEXT" + ")")
         db.execSQL(query)
     }
 
@@ -31,8 +31,9 @@ class DBHelper(context: Context,factory:SQLiteDatabase.CursorFactory?):
 
     fun save(name: String,phone:String,role:String){
         val values = ContentValues()
-        values.put(KEY_NAME,name)
-        values.put(KEY_INFO,phone.plus(role))
+        values.put(KEY_ID,name)
+        values.put(KEY_PHONE,phone)
+        values.put(KEY_ROLE,role)
         val db = this.writableDatabase
         db.insert(TABLE_NAME,null,values)
         db.close()

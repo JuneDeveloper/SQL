@@ -64,14 +64,14 @@ class SecondActivity : AppCompatActivity() {
             val cursor = db.getInfo()
             if (cursor != null && cursor.moveToFirst()) {
                 cursor.moveToFirst()
-                outputNameTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_NAME)) + "\n")
-                outputPhoneTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_INFO)).take(11) + "\n" )
-                outputRoleTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_INFO)).drop(11) + "\n" )
+                outputNameTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_ID)) + "\n")
+                outputPhoneTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_PHONE)) + "\n" )
+                outputRoleTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_ROLE)) + "\n" )
             }
             while (cursor!!.moveToNext()) {
-                outputNameTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_NAME)) + "\n")
-                outputPhoneTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_INFO)).take(11) + "\n" )
-                outputRoleTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_INFO)).drop(11) + "\n" )
+                outputNameTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_ID)) + "\n")
+                outputPhoneTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_PHONE)) + "\n" )
+                outputRoleTV.append(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_ROLE)) + "\n" )
             }
             cursor.close()
         }
