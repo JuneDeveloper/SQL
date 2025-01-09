@@ -21,7 +21,7 @@ class DBHelper(context: Context,factory:SQLiteDatabase.CursorFactory?):
         val query = ("CREATE TABLE " + TABLE_NAME + " (" +
                 KEY_ID + " INTEGER PRIMARY KEY, " +
                 KEY_NAME + " TEXT," +
-                KEY_INFO + " TEXT," + ")")
+                KEY_INFO + " TEXT" + ")")
         db.execSQL(query)
     }
 
